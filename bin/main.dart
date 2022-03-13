@@ -12,18 +12,24 @@ void main() {
   print('Nama : ${dlb.nama} - Gaji :  ${dlb.Gaji} - SKS : ${dlb.sks}');
   print('-----------------------------------------------------------');
 
-  DosenTamu dt = DosenTamu("Petot", 678, gaji, 1000, 1);
-  dt.Absen();
-  print('Nama : ${dt.nama} - Gaji :  ${dt.Gaji} - SKS : ${dt.sks}');
-  print('-----------------------------------------------------------');
-
   DosenTetap dt2 = DosenTetap("uwu", 890, gaji, 1000, 1);
+  dt2.Absen();
+  dt2.Absen();
   dt2.Absen();
   print('Nama : ${dt2.nama} - Gaji :  ${dt2.Gaji} - SKS : ${dt2.sks}');
   print('-----------------------------------------------------------');
 
+  DosenTamu dt = DosenTamu("Petot", 678, 1000, 1);
+  dt.Absen();
+  dt.Absen();
+  dt.Absen();
+  print('Nama : ${dt.nama} - Gaji :  ${dt.Gaji} - SKS : ${dt.sks}');
+  print('-----------------------------------------------------------');
+
   Staff st = Staff("Karjo", 123, gaji, 1000);
   st.perhitungancuti(12, 10);
+  st.Absen();
+  st.Absen();
   st.Absen();
   print('Nama : ${st.nama} - Gaji :  ${st.Gaji} - Sisa Cuti : ${st.Cuti}');
   print('------------------------------------------------------------');

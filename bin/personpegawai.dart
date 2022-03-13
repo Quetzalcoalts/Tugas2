@@ -1,14 +1,9 @@
 class Pegawai {
   String? _nama;
   int _nip = 0;
-  int _gaji = 0;
 
   int get nip {
     return _nip;
-  }
-
-  int get gaji {
-    return _gaji;
   }
 
   String get nama {
@@ -23,9 +18,5 @@ class Pegawai {
     _nip = dtNip;
   }
 
-  set gaji(int dtGaji) {
-    _gaji = dtGaji;
-  }
-
-  Pegawai(this._nama, this._nip, this._gaji);
+  Pegawai(this._nama, this._nip);
 }

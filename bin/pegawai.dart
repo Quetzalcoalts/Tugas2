@@ -4,12 +4,15 @@ import 'personpegawai.dart';
 
 class DosenLB extends Pegawai {
   int? sks;
-  DosenLB(String? nama, int nip, int gaji, int sks) : super(nama, nip, gaji) {
+  int? gaji;
+
+  DosenLB(String? nama, int nip, int gaji2, int sks) : super(nama, nip) {
     this.sks = sks;
+    this.gaji = gaji2;
   }
 
   get Gaji {
-    return (gaji + (sks! * 40000));
+    return (gaji! + (sks! * 40000));
   }
 
   get Sks {
@@ -20,16 +23,18 @@ class DosenLB extends Pegawai {
 class DosenTetap extends Pegawai with Absensi {
   int? tunjkehadir;
   int? sks;
+  int? gaji;
   int absen = 0;
 
-  DosenTetap(String? nama, int nip, int gaji, int tunjkehadir2, int sks2)
-      : super(nama, nip, gaji) {
+  DosenTetap(String? nama, int nip, int gaji2, int tunjkehadir2, int sks2)
+      : super(nama, nip) {
     this.tunjkehadir = tunjkehadir2;
     this.sks = sks2;
+    this.gaji = gaji2;
   }
 
   get Gaji {
-    return ((sks! * 40000) + (tunjkehadir! * absen));
+    return (gaji! + (sks! * 40000) + (tunjkehadir! * absen));
   }
 
   get Sks {
@@ -45,15 +50,15 @@ class DosenTetap extends Pegawai with Absensi {
 class DosenTamu extends Pegawai with Absensi {
   int? tunjkehadir;
   int? sks;
-  int absen = 1;
+  int absen = 0;
 
-  DosenTamu(String? nama, int nip, int gaji, int tunjkehadir2, int sks2)
-      : super(nama, nip, gaji) {
+  DosenTamu(String? nama, int nip, int tunjkehadir2, int sks2)
+      : super(nama, nip) {
     this.tunjkehadir = tunjkehadir2;
     this.sks = sks2;
   }
   get Gaji {
-    return (gaji + (sks! * 40000) + (tunjkehadir! * absen));
+    return ((sks! * 40000) + (tunjkehadir! * absen));
   }
 
   get Sks {
@@ -71,15 +76,16 @@ class Staff extends Pegawai with Absensi {
   int? totgaji;
   int? cuti;
   int? lama;
+  int? gaji;
   int absen = 0;
 
-  Staff(String? nama, int nip, int gaji, int tunjkehadir2)
-      : super(nama, nip, gaji) {
+  Staff(String? nama, int nip, int gaji2, int tunjkehadir2) : super(nama, nip) {
     _tunjkehadir = tunjkehadir2;
+    this.gaji = gaji2;
   }
 
   get Gaji {
-    return (gaji + (_tunjkehadir! * absen));
+    return (gaji! + (_tunjkehadir! * absen));
   }
 
   perhitungancuti(int i, int j) {
