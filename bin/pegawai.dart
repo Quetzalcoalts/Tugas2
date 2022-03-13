@@ -20,6 +20,7 @@ class DosenLB extends Pegawai {
 class DosenTetap extends Pegawai with Absensi {
   int? tunjkehadir;
   int? sks;
+  int absen = 0;
 
   DosenTetap(String? nama, int nip, int gaji, int tunjkehadir2, int sks2)
       : super(nama, nip, gaji) {
@@ -28,17 +29,23 @@ class DosenTetap extends Pegawai with Absensi {
   }
 
   get Gaji {
-    return ((sks! * 40000) + tunjkehadir!);
+    return ((sks! * 40000) + (tunjkehadir! * absen));
   }
 
   get Sks {
     return (sks);
+  }
+
+  Absen() {
+    absensi();
+    absen++;
   }
 }
 
 class DosenTamu extends Pegawai with Absensi {
   int? tunjkehadir;
   int? sks;
+  int absen = 1;
 
   DosenTamu(String? nama, int nip, int gaji, int tunjkehadir2, int sks2)
       : super(nama, nip, gaji) {
@@ -46,11 +53,16 @@ class DosenTamu extends Pegawai with Absensi {
     this.sks = sks2;
   }
   get Gaji {
-    return (gaji + (sks! * 40000) + tunjkehadir!);
+    return (gaji + (sks! * 40000) + (tunjkehadir! * absen));
   }
 
   get Sks {
     return (sks);
+  }
+
+  Absen() {
+    absensi();
+    absen++;
   }
 }
 
@@ -59,6 +71,7 @@ class Staff extends Pegawai with Absensi {
   int? totgaji;
   int? cuti;
   int? lama;
+  int absen = 0;
 
   Staff(String? nama, int nip, int gaji, int tunjkehadir2)
       : super(nama, nip, gaji) {
@@ -78,5 +91,10 @@ class Staff extends Pegawai with Absensi {
 
   get Cuti {
     return (cuti);
+  }
+
+  Absen() {
+    absensi();
+    absen++;
   }
 }
