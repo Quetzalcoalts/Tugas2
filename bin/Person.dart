@@ -24,7 +24,7 @@ class Person {
     return _nama!;
   }
 
-  int get usia {
+  int get nrp {
     return _nrp;
   }
 }

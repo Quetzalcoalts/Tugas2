@@ -3,14 +3,16 @@ class Pegawai {
   int _nip = 0;
   int _gaji = 0;
 
-  Pegawai(this._nama, this._nip, this._gaji);
-
   int get nip {
     return _nip;
   }
 
   int get gaji {
     return _gaji;
+  }
+
+  String get nama {
+    return _nama!;
   }
 
   set nama(String dtNama) {
@@ -24,4 +26,6 @@ class Pegawai {
   set gaji(int dtGaji) {
     _gaji = dtGaji;
   }
+
+  Pegawai(this._nama, this._nip, this._gaji);
 }
