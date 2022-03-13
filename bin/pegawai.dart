@@ -79,7 +79,7 @@ class Staff extends Pegawai with Absensi {
   }
 
   get Gaji {
-    return (gaji + _tunjkehadir!);
+    return (gaji + (_tunjkehadir! * absen));
   }
 
   perhitungancuti(int i, int j) {
